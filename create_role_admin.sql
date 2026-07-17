@@ -1,0 +1,1 @@
+CREATE ROLE admin WITH LOGIN PASSWORD 'my_secure_password';
