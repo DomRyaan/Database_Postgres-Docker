@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS user_table(
+id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+nome VARCHAR(200),
+email VARCHAR(100) NOT NULL UNIQUE,
+senha VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pedidos_user(
+id SERIAL PRIMARY KEY,
+user_cliente UUID REFERENCES user_table(id),
+nome_produto VARCHAR(100) NOT NULL,
+quantidade INT NOT NULL,
+valor DECIMAL(5,2) NOT NULL
+);
